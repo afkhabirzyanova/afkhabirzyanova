@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Create dist folder
+        run: mkdir -p dist
+
       - name: Generate snake
         uses: Platane/snk@v3
         with:
@@ -27,4 +30,3 @@ jobs:
           git add dist/
           git commit -m "Update snake" || echo "No changes"
           git push
-
